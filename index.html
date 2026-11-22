@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rigline — PC Games</title>
+<meta name="description" content="Browse, search and wishlist the best PC games.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🎮</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=Outfit:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="progress" id="progress"></div>
+<div class="glow g1"></div><div class="glow g2"></div>
+
+<header class="nav">
+  <a href="#home" class="logo">RIG<span>LINE</span></a>
+  <button class="burger" aria-label="Menu" aria-expanded="false"><i></i><i></i><i></i></button>
+  <nav class="links">
+    <a href="#home">Home</a>
+    <a href="#games">Games</a>
+    <a href="#stats">Community</a>
+    <a href="#join" class="btn small">Join</a>
+    <button class="icon-btn" id="theme" aria-label="Toggle light or dark theme">🌙</button>
+    <a href="#games" class="icon-btn heart" aria-label="Wishlist">♥<em id="count">0</em></a>
+  </nav>
+</header>
+
+<section id="home" class="hero">
+  <p class="pill anim" style="--d:0">New this week: 12 releases</p>
+  <h1 class="anim" style="--d:1">Your next PC game<br>starts <span class="type" id="type"></span></h1>
+  <p class="sub anim" style="--d:2">Browse, filter and wishlist the best PC games, from tight shooters to cozy farms.</p>
+  <div class="cta anim" style="--d:3">
+    <a href="#games" class="btn">Browse games</a>
+    <a href="#join" class="btn ghost">Get weekly picks</a>
+  </div>
+  <div class="floaters" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+</section>
+
+<section id="games" class="section">
+  <h2 class="reveal">Featured games</h2>
+  <div class="filters reveal" role="group" aria-label="Filter by genre">
+    <button class="chip active" data-f="all">All</button>
+    <button class="chip" data-f="action">Action</button>
+    <button class="chip" data-f="rpg">RPG</button>
+    <button class="chip" data-f="strategy">Strategy</button>
+    <button class="chip" data-f="indie">Indie</button>
+  </div>
+  <div class="tools reveal">
+    <input type="search" id="q" placeholder="Search games…" aria-label="Search games">
+    <select id="sort" aria-label="Sort games">
+      <option value="def">Sort: Featured</option>
+      <option value="rate">Top rated</option>
+      <option value="low">Price: low to high</option>
+      <option value="high">Price: high to low</option>
+    </select>
+  </div>
+  <div class="grid" id="grid"></div>
+  <p class="empty" id="empty" hidden>No games match your search. Try another word or genre.</p>
+</section>
+
+<section id="stats" class="section stats">
+  <div class="stat reveal"><b data-count="48000">0</b><span>Games listed</span></div>
+  <div class="stat reveal"><b data-count="2300000">0</b><span>Players</span></div>
+  <div class="stat reveal"><b data-count="9100">0</b><span>Reviews this week</span></div>
+</section>
+
+<section id="join" class="section join reveal">
+  <h2>Get the weekly top 10</h2>
+  <p>One email every Friday with the best new PC releases and sales.</p>
+  <div class="field">
+    <input type="email" id="email" placeholder="you@example.com" aria-label="Email">
+    <button class="btn" id="sub">Subscribe</button>
+  </div>
+  <p class="msg" id="msg" role="status"></p>
+</section>
+
+<footer class="foot">© 2026 Rigline. All game names on this page are made up.</footer>
+<dialog id="modal" aria-labelledby="mTitle">
+  <button class="x" id="mClose" aria-label="Close">✕</button>
+  <div class="mArt" id="mArt"></div>
+  <div class="mBody">
+    <h3 id="mTitle"></h3><p class="tag" id="mTag"></p>
+    <p id="mDesc"></p>
+    <ul id="mList"></ul>
+    <div class="row"><span class="price" id="mPrice"></span><button class="btn" id="mWish">Add to wishlist</button></div>
+  </div>
+</dialog>
+<div class="toast" id="toast" role="status"></div>
+<button class="top" id="top" aria-label="Back to top">↑</button>
+<script src="script.js"></script>
+</body>
+</html>
